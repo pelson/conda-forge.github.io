@@ -64,7 +64,7 @@ change_limit = args.limit
 if args.package:
     package_name = args.package
     package_feedstock = '{}-feedstock'.format(package_name)
-    args.regexp = package_name
+    args.regexp = r'^{}$'.format(package_name)
 
 need_to_clone = args.local == False
 feedstock_gen = feedstocks.feedstocks_yaml('conda-forge', feedstocks_dir, use_local=args.local,
